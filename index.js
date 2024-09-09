@@ -1,15 +1,19 @@
-// npm install axios http-proxy-agent https-proxy-agent
-const axios = require("axios");
-const { HttpsProxyAgent } = require("https-proxy-agent");
+const antibotbrowser = require("antibotbrowser");
+const puppeteer = require('puppeteer');
 
-const url = "https://gota.io";
-const proxy = "http://mtvtwuwn:tehpnytkt02b@43.229.11.86:5724";
-const httpsAgent = new HttpsProxyAgent(proxy);
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-axios({
-	url,
-	httpsAgent,
-	method: 'GET',
-})
-    .then(response => console.log(response.data))
-    .catch(error => console.log(error));
+(async () => { 
+
+   const antibrowser = await antibotbrowser.startbrowser();  
+
+    const browser = await puppeteer.connect({browserWSEndpoint: antibrowser.websokcet});
+
+   // Normal use from now on
+    const page = await browser.newPage();    
+
+    await page.setViewport({width:0, height:0});
+
+    page.goto("https://gota.io")
+
+	
+
+})();
