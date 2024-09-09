@@ -13,13 +13,14 @@ const puppeteer = require('puppeteer');
   const url = 'https://gota.io';
 
   // Navigate to the URL (GET request)
-  await page.goto(url, { waitUntil: 'networkidle2' });
 
-  // Get the page content
-  const content = await page.content();
+  const response = await page.goto(url, { waitUntil: 'networkidle2' });
+  
+const headers = response.headers();
+console.log(headers);
 
-  // Print the page content to the console
-  console.log(content);
+console.log(response.status());
+  
 
   // Close the browser
   await browser.close();
