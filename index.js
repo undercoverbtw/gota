@@ -1,19 +1,16 @@
-const antibotbrowser = require("antibotbrowser");
-const puppeteer = require('puppeteer');
+import fetch from 'node-fetch'; 
+import { HttpsProxyAgent } from 'https-proxy-agent'; 
 
-(async () => { 
+const username = 'm4teelias';
+const password = 'Diana110604'; 
+const agent = new HttpsProxyAgent(`https://${username}:${password}@unblock.oxylabs.io:60000`);/
+// Ignore the certificate 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0; 
+const response = 
+	await fetch('https://ip.oxylabs.io/location',  { 
+		method: 'get',
+		agent: agent,
+	});
 
-   const antibrowser = await antibotbrowser.startbrowser();  
 
-    const browser = await puppeteer.connect({browserWSEndpoint: antibrowser.websokcet});
-
-   // Normal use from now on
-    const page = await browser.newPage();    
-
-    await page.setViewport({width:0, height:0});
-
-    page.goto("https://gota.io")
-
-	
-
-})();
+console.log(await response.text());
