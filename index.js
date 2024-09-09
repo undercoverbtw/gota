@@ -12,4 +12,8 @@ puppeteer.use(StealthPlugin());
   const page = await browser.newPage();
   await page.goto("https://gota.io");
 
+    const title = await page.title();
+    console.log("Page title:", title);
+    await browser.close();
+  
 })();
