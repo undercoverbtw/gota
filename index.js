@@ -3,7 +3,7 @@ const axios = require("axios");
 const { HttpsProxyAgent } = require("https-proxy-agent");
 
 const url = "https://gota.io";
-const proxy = "http://43.229.11.86:5724@mtvtwuwn:tehpnytkt02b";
+const proxy = "http://43.229.11.86:5724:mtvtwuwn:tehpnytkt02b";
 const httpsAgent = new HttpsProxyAgent(proxy);
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 axios({
