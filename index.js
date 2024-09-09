@@ -10,7 +10,7 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
 
   // Define the URL you want to request
-  const url = 'https://example.com';
+  const url = 'https://gota.io';
 
   // Navigate to the URL (GET request)
   await page.goto(url, { waitUntil: 'networkidle2' });
