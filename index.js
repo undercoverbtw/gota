@@ -1,7 +1,6 @@
 // npm install axios http-proxy-agent https-proxy-agent
 const axios = require("axios");
-const HttpProxyAgent = require("http-proxy-agent");
-const HttpsProxyAgent = require("https-proxy-agent");
+const { HttpsProxyAgent } = require("https-proxy-agent");
 
 const url = "https://gota.io";
 const proxy = "http://1b072891695ddc068abbd73daecb42d704f9059c@api.zenrows.com:8001";
