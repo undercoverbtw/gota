@@ -12,7 +12,7 @@ puppeteer.use(StealthPlugin());
 
   const page = await browser.newPage();
  // Navigate to the URL (GET request)
-  const response = await page.goto(url, { waitUntil: 'networkidle2' });
+  const response = await page.goto("https://gota.io/web", { waitUntil: 'networkidle2' });
 
   // Get and print the status code and page content
   console.log('Status Code:', response.status());
