@@ -16,9 +16,6 @@ puppeteer.use(StealthPlugin());
 
   // Get and print the status code and page content
   console.log('Status Code:', response.status());
-  const content = await page.content();
-  console.log(content);
-
 
     const title = await page.title();
     console.log("Page title:", title);
