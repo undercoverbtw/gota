@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'; 
 import { HttpsProxyAgent } from 'https-proxy-agent'; 
 
-const username = 'm4teelias';
+const username = 'm4teeliass';
 const password = 'Diana110604'; 
 const agent = new HttpsProxyAgent(`https://${username}:${password}@unblock.oxylabs.io:60000`);
 // Ignore the certificate 
